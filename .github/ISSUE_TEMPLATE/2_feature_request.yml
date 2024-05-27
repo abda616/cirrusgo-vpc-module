@@ -1,0 +1,78 @@
+name: Feature request
+description: Suggest an idea for this project
+
+assignees: [""]
+labels:
+  - "enhancement"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to suggest a feature.
+
+        Please fill in as much of the template below as you're able.
+
+        ---
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A clear and concise description of what the feature is.
+      placeholder: What is the feature?
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of what the feature is.
+      placeholder: Describe the feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Why is this feature important to you?
+      placeholder: Why is this feature important to you?
+    validations:
+      required: true
+
+  - type: textarea
+    id: ideal-solution
+    attributes:
+      label: Ideal solution
+      description: A clear and concise description of what you want to happen.
+      placeholder: What do you want to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternatives considered
+      description: A clear and concise description of any alternative solutions or features you've considered.
+      placeholder: Any alternative solutions or features you've considered?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any other context or screenshots about the feature request here.
+      placeholder: Any other context?
+    validations:
+      required: false

@@ -1,0 +1,227 @@
+{
+  "workbench.settings.useSplitJSON": true,
+  "editor.wordWrap": "on",
+  "editor.suggestSelection": "first",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.options": {
+    "env": {
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6 // or 7,8,9
+    }
+  },
+  "workbench.statusBar.visible": true,
+  "emmet.triggerExpansionOnTab": true,
+  "files.associations": {
+    "nomad.hcl": "hcl",
+    "*.nomad": "hcl"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "syler.sass-indented"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "#fff",
+      "backgroundColor": "#ffbd2a",
+      "overviewRulerColor": "rgba(255,189,42,0.8)",
+    },
+    {
+      "text": "FIXME:",
+      "color": "#fff",
+      "backgroundColor": "#f06292",
+      "overviewRulerColor": "rgba(240,98,146,0.8)",
+    },
+    {
+      "text": "DEBUG:",
+      "color": "#fff",
+      "backgroundColor": "#f44336",
+      "overviewRulerColor": "rgba(244, 67, 54, 0.8)",
+    },
+    {
+      "text": "REVIEW:",
+      "color": "#fff",
+      "backgroundColor": "#4caf50",
+      "overviewRulerColor": "rgba(76,175,80,0.8)",
+    },
+    {
+      "text": "TESTED:",
+      "color": "#fff",
+      "backgroundColor": "#2196f3",
+      "overviewRulerColor": "rgba(33, 150, 243, 0.8)",
+    },
+    {
+      "text": "MANUAL:",
+      "color": "#fff",
+      "backgroundColor": "#ff9800",
+      "overviewRulerColor": "rgba(255, 152, 0, 0.8)",
+    },
+    {
+      "text": "NOTE:",
+      "color": "#fff",
+      "backgroundColor": "#9e9e9e",
+      "overviewRulerColor": "rgba(158, 158, 158, 0.8)",
+    },
+    {
+      "text": "INFO:",
+      "color": "#fff",
+      "backgroundColor": "#009688",
+      "overviewRulerColor": "rgba(0, 150, 136, 0.8)"
+    },
+    {
+      "text": "DONE:",
+      "color": "#fff",
+      "backgroundColor": "#7e57c2",
+      "overviewRulerColor": "rgba(126, 87, 194, 0.8)"
+    }
+  ],
+  "editor.fontLigatures": true,
+  "json.maxItemsComputed": 9999999,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "gitlens.defaultDateFormat": "YYYY/MM/DD",
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "DEBUG",
+    "REVIEW",
+    "TESTED",
+    "MANUAL",
+    "NOTE",
+    "INFO",
+    "DONE"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check-circle",
+      "iconColour": "#ffbd2a"
+    },
+    "FIXME": {
+      "icon": "flame",
+      "iconColour": "#f06292"
+    },
+    "DEBUG": {
+      "icon": "bug",
+      "iconColour": "#f44336"
+    },
+    "REVIEW": {
+      "icon": "eye",
+      "iconColour": "#4caf50"
+    },
+    "TESTED": {
+      "icon": "check",
+      "iconColour": "#2196f3"
+    },
+    "MANUAL": {
+      "icon": "person-add",
+      "iconColour": "#ff9800"
+    },
+    "NOTE": {
+      "icon": "info",
+      "iconColour": "#9e9e9e"
+    },
+    "INFO": {
+      "icon": "info",
+      "iconColour": "#009688"
+    },
+    "DONE": {
+      "icon": "check-circle",
+      "iconColour": "#7e57c2"
+    }
+  },
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "switch:command"
+  ],
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "[c]": {
+    "editor.defaultFormatter": "mjohns.clang-format"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.linkedEditing": true,
+  "editor.inlineSuggest.enabled": true,
+  "git.autofetch": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "redhat.telemetry.enabled": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.largeFileOptimizations": false,
+  "editor.accessibilitySupport": "off",
+  "notebook.lineNumbers": "on",
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "gitlens.graph.minimap.enabled": false,
+  "bashBeautify.tabSize": 2,
+  "better-comments.highlightPlainText": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace"
+}
