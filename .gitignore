@@ -41,3 +41,4 @@ vendor
 .ruby-version
 .terraform.lock.hcl
 terragrunt
+.DS_Store

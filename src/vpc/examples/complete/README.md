@@ -26,12 +26,13 @@
 > Negative potential consequences of an action.
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.24.0 |
+| Name                                                                     | Version   |
+| ------------------------------------------------------------------------ | --------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.5.0  |
+| <a name="requirement_aws"></a> [aws](#requirement_aws)                   | >= 5.50.0 |
 
 ## Providers
 
@@ -52,4 +53,5 @@ No inputs.
 ## Outputs
 
 No outputs.
+
 <!-- END_TF_DOCS -->
