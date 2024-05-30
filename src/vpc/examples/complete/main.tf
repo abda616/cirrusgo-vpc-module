@@ -1,6 +1,6 @@
 # ------------| VPC |--------------
 module "vpc" {
-  source = "../../model"
+  source = "../.."
 
   vpc_enable           = true
   vpc_instance_tenancy = "default"
@@ -29,7 +29,7 @@ module "vpc" {
 }
 # ------------| subnets |--------------
 module "subnet" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   subnet_enable            = true
@@ -59,7 +59,7 @@ module "subnet" {
   subnet_map_public_ip_on_launch         = null
 }
 module "subnet-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   subnet_enable            = true
@@ -89,7 +89,7 @@ module "subnet-2" {
   subnet_map_public_ip_on_launch         = null
 }
 module "subnet-3" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   subnet_enable            = true
@@ -121,7 +121,7 @@ module "subnet-3" {
 
 # ------------| NAT and INGw |--------------
 module "internet_gateway" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   internet_gateway_enable = true
@@ -132,7 +132,7 @@ module "internet_gateway" {
   }
 }
 module "nat_gateway" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.subnet, module.eip]
 
   nat_gateway_enable     = true
@@ -151,7 +151,7 @@ module "nat_gateway" {
   }
 }
 module "eip" {
-  source = "../../model"
+  source = "../.."
 
   eip_enable = true
 
@@ -172,7 +172,7 @@ module "eip" {
 
 # ------------| router-table |--------------
 module "route_table" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   route_table_enable           = true
@@ -183,7 +183,7 @@ module "route_table" {
   }
 }
 module "route_table-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   route_table_enable           = true
@@ -195,7 +195,7 @@ module "route_table-2" {
 }
 # ------------| routes |--------------
 module "route" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.route_table, module.nat_gateway, module.internet_gateway]
 
   route_enable         = true
@@ -205,7 +205,7 @@ module "route" {
   route_gateway_id             = module.internet_gateway.internet_gateway_id
 }
 module "route-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.route_table, module.nat_gateway, module.internet_gateway]
 
   route_enable         = true
@@ -216,7 +216,7 @@ module "route-2" {
 }
 # ------------| Route Table Assoc |--------------
 module "route_table_association" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.route, module.route-2, module.subnet, module.subnet-2, module.subnet-3]
 
   route_ta_enable = true
@@ -226,7 +226,7 @@ module "route_table_association" {
   route_ta_gateway_id     = null
 }
 module "route_table_association-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.route, module.route-2, module.subnet, module.subnet-2, module.subnet-3]
 
   route_ta_enable = true
@@ -236,7 +236,7 @@ module "route_table_association-2" {
   route_ta_gateway_id     = null
 }
 module "route_table_association-3" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.route, module.route-2, module.subnet, module.subnet-2, module.subnet-3]
 
   route_ta_enable = true
@@ -253,7 +253,7 @@ module "route_table_association-3" {
 
 # ------------| NACL |--------------
 module "network_acl" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.subnet, module.subnet-2, module.subnet-3]
 
   network_acl_enable     = true
@@ -269,7 +269,7 @@ module "network_acl" {
 
 
 module "network_acl_association-1" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_association_enable         = true
@@ -277,7 +277,7 @@ module "network_acl_association-1" {
   network_acl_association_subnet_id      = module.subnet.subnet_id
 }
 module "network_acl_association-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_association_enable         = true
@@ -285,7 +285,7 @@ module "network_acl_association-2" {
   network_acl_association_subnet_id      = module.subnet-2.subnet_id
 }
 module "network_acl_association-3" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_association_enable         = true
@@ -296,7 +296,7 @@ module "network_acl_association-3" {
 
 
 module "network_acl_rule-in-1" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -311,7 +311,7 @@ module "network_acl_rule-in-1" {
   network_acl_rule_to_port        = 22
 }
 module "network_acl_rule-out-1" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -327,7 +327,7 @@ module "network_acl_rule-out-1" {
   network_acl_rule_to_port        = 65535
 }
 module "network_acl_rule-in-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -342,7 +342,7 @@ module "network_acl_rule-in-2" {
   network_acl_rule_to_port        = 80
 }
 module "network_acl_rule-out-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -358,7 +358,7 @@ module "network_acl_rule-out-2" {
 }
 
 module "network_acl_rule-in-3" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -373,7 +373,7 @@ module "network_acl_rule-in-3" {
   network_acl_rule_to_port        = 65535
 }
 module "network_acl_rule-out-3" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -388,7 +388,7 @@ module "network_acl_rule-out-3" {
   network_acl_rule_to_port        = 80
 }
 module "network_acl_rule-in-4" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -404,7 +404,7 @@ module "network_acl_rule-in-4" {
 }
 
 module "network_acl_rule-out-4" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.network_acl]
 
   network_acl_rule_enable = true
@@ -428,7 +428,7 @@ module "network_acl_rule-out-4" {
 
 # ------------| SubGroup |--------------
 module "security_group" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc]
 
   security_group_enable = true
@@ -446,7 +446,7 @@ module "security_group" {
   security_group_revoke_rules_on_delete = null
 }
 module "security_group_rule" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc, module.security_group]
 
   security_group_rule_enable = true
@@ -461,7 +461,7 @@ module "security_group_rule" {
   security_group_rule_cidr_blocks = ["18.202.216.48/29"]
 }
 module "security_group_rule-2" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc, module.security_group]
 
   security_group_rule_enable = true
@@ -476,7 +476,7 @@ module "security_group_rule-2" {
   security_group_rule_cidr_blocks = ["0.0.0.0/0"]
 }
 module "security_group_rule-3" {
-  source     = "../../model"
+  source     = "../.."
   depends_on = [module.vpc, module.security_group]
 
   security_group_rule_enable = true
